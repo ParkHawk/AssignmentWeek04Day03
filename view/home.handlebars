@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <section>
+      <form class="todo" action="/" method="post">
+        <input type="text" name="input" placeholder="Add Your Item">
+
+      </form>
+    </section>
+    <section class="display">
+
+      {{#todos}}
+      <ul>
+        <li>
+            <a href="/complete/{{@index}}">Completed!</a>{{.}}
+        </li>
+
+      </ul>
+      {{/todos}}
+
+      <h3>Done</h3>
+      {{#doneList}}
+      <ul>
+        <li>{{.}}</li>
+      </ul>
+      {{/doneList}}
+    </section>
+  </body>
+</html>
